@@ -27,10 +27,8 @@ src_tegra_eeprom = [
         'boardspec.c',
         'boardspec.h']
 
-# Shared Library
-lib_tegra_eeprom = shared_library('tegra_eeprom', src_tegra_eeprom,
-        version: meson.project_version(),
-        install : true)
+# Static Library
+lib_tegra_eeprom = static_library('tegra_eeprom', src_tegra_eeprom, install : true)
 install_headers('boardspec.h', 'cvm.h', 'eeprom.h', subdir : 'tegra-eeprom')
 
 # Executables
